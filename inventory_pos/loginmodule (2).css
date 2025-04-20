@@ -1,0 +1,97 @@
+<form>
+body {
+	font: 11px Verdana, Arial, Helvetica, sans-serif;
+	color: #FFFFFF;
+	margin: 0px;
+	padding: 20px 10px 0px;
+	background-color: #39F;
+}
+
+#container
+{
+   background:url(file://localhost/C:/wamp/www/PHP-Login/gsjdgasdhggaa.jpg);
+   height:700px;
+   width: 800px;
+   position: relative;
+   margin-top: 0px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: left;
+}
+#header img{
+			overflow:hidden;	
+			padding-top: 50px;
+			}
+#text1 {
+	position:absolute;
+	height: 39px;
+	width: 189px;
+	font-size: 36px;
+		}
+#text1 a {
+			font:"Arial Black", Gadget, sans-serif;
+			color:#00C;
+			padding-left: 20px;
+			size: 300px;
+			background-image:url(images/button.jpg);
+			}
+		}
+		
+#img1{ height: 180px;
+		width: 140px;
+		}
+}
+h1 {
+	color: #FFFFFF;
+	margin: 0px 0px 5px;
+	padding: 0px 0px 3px;
+	font: bold 18px Verdana, Arial, Helvetica, sans-serif;
+	border-bottom: 1px dashed #E6E8ED;
+}
+a {
+	color: #FFFFFF;
+	font-size: 11px;
+}
+a:hover {
+	color: #99CC00;
+	background-color: #FFF;
+}
+.err {
+	color: #FF9900;
+}
+th {
+	font-weight: bold;
+	text-align: left;
+}
+.addbutton {
+	font-size: 12px;
+	color: #FFF;
+	background-color: #030;
+	font-family: Arial, Helvetica, sans-serif;
+	text-transform: lowercase;
+	background-attachment: fixed;
+	background-image: url(images/rlow.png);
+}
+
+#container #error1 {
+					bottom: 30px;
+					}
+
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,106 @@
+<?php
+global $myusername;
+// Make a MySQL Connection
+mysql_connect("localhost", "root", "") or die(mysql_error());
+mysql_select_db("inventory") or die(mysql_error());
+?>
+<a href="home.php" style="text-decoration:none">
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="stylesheets/style.css" rel="stylesheet" type="text/css" />
+<title>Inventory</title>
+
+<body background="image/rrr.jpg">
+
+<body onload ='window.print()'>
+
+<div id="wrapper">
+	<div id="header_wrapper">
+    	<ul id="menu">
+   			
+		</ul>
+    </div>
+	
+ 
+<?php
+	mysql_connect ("localhost", "root","")  or die (mysql_error());
+	mysql_select_db ("inventory");
+	
+	$term = $_POST['term'];
+	$name= $_POST['name'];
+	$nam= $_POST['nam'];
+	$sql = mysql_query("select * from productlist where month like '%$term%' and day like '%$name%' and year like '%$nam%'");
+	$today=getdate();
+
+$day_name=$today['weekday'];
+$month=$today['month'];
+$day=$today['mday'];
+$year=$today['year'];
+echo"<center><font color='black'><h1>Inventory For $month $day, $year</center></h1>";
+        	// Get all the data from the table
+	$result = mysql_query("SELECT * FROM productlist WHERE month='$month' and day='$day' and year='$year'") 
+		or die(mysql_error());   
+
+	echo "<center><table width='900px' border='0' class='tbody' cellpadding='5' cellspacing='2'>";
+		echo "<tr class='thead'> 
+		<th>Product Code</th>
+		<th>Name</th>
+		<th>Sold Product</th>
+		<th>Quantity</th>
+		<th>Unit</th>
+		<th>Price</th>
+		<th>Category</th>
+		<th>Supplier</th>
+		<th>Date</th>
+		<th>Time</th>
+		<th>Selling Price</th>
+		</tr>";
+
+	while ($row = mysql_fetch_array($sql)){
+		$ID =$row['id'];
+		  $ID=$row['id'];
+				
+
+	echo "<tr><td><div align='center'>"; 
+	echo $row['pcode'];
+	echo "</td><td><div align='center'>"; 
+	echo $row['pdesc'];
+	echo "</td><td><div align='center'>";
+	echo $row['sold'];
+	echo "</td><td><div align='center'>";
+	echo $row['pleft'];
+	echo "</td><td><div align='center'>";
+	echo $row['punit'];
+	echo "</td><td><div align='center'>";
+	echo $row['pprice'];
+	echo "</td><td><div align='center'>";
+	echo $row['pcategory'];
+	echo "</td><td><div align='center'>";
+	echo $row['psupplier'];
+	echo "</td><td><div align='center'>";
+	echo $row['date'];
+	echo "</td><td><div align='center'>";
+	echo $row['time'];
+	echo "</td><td><div align='center'>";
+	echo $row['psellingprice'];
+		}
+echo "</table>";
+echo"<br><br>";
+		
+?>
+
+<style type="text/css">
+table, td, th
+{
+border:1px solid black;
+}
+th
+{
+background-color:black;
+color:white;
+}
+</style>
+</a href>

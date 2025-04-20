@@ -1,0 +1,263 @@
+-- phpMyAdmin SQL Dump
+-- version 2.11.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 27, 2012 at 08:06 PM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `inventory`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `addproduct`
+--
+
+CREATE TABLE `addproduct` (
+  `id` int(11) NOT NULL auto_increment,
+  `pcode` varchar(100) NOT NULL,
+  `pdesc` varchar(100) NOT NULL,
+  `psold` varchar(100) NOT NULL,
+  `pleft` varchar(100) NOT NULL,
+  `pprice` varchar(100) NOT NULL,
+  `pcategory` varchar(100) NOT NULL,
+  `psupplier` varchar(100) NOT NULL,
+  `psellingprice` varchar(100) NOT NULL,
+  `day_name` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `day` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `addproduct`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`id`, `username`, `password`) VALUES
+(1, 'administrator', 'admin');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cashier`
+--
+
+CREATE TABLE `cashier` (
+  `id` int(11) NOT NULL auto_increment,
+  `username` varchar(30) NOT NULL,
+  `password` varchar(30) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cashier`
+--
+
+INSERT INTO `cashier` (`id`, `username`, `password`) VALUES
+(1, 'cashier', 'cashier');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `code`
+--
+
+CREATE TABLE `code` (
+  `id` int(11) NOT NULL auto_increment,
+  `code` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `code`
+--
+
+INSERT INTO `code` (`id`, `code`) VALUES
+(1, 24);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cuscode`
+--
+
+CREATE TABLE `cuscode` (
+  `id` int(11) NOT NULL auto_increment,
+  `code` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `cuscode`
+--
+
+INSERT INTO `cuscode` (`id`, `code`) VALUES
+(1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `list`
+--
+
+CREATE TABLE `list` (
+  `id` int(11) NOT NULL auto_increment,
+  `pcode` varchar(100) NOT NULL,
+  `pdesc` varchar(100) NOT NULL,
+  `pleft` varchar(100) NOT NULL,
+  `pprice` varchar(100) NOT NULL,
+  `pcategory` varchar(100) NOT NULL,
+  `psupplier` varchar(100) NOT NULL,
+  `psellingprice` varchar(100) NOT NULL,
+  `day_name` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `day` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `list`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `productlist`
+--
+
+CREATE TABLE `productlist` (
+  `id` int(11) NOT NULL auto_increment,
+  `pcode` varchar(100) NOT NULL,
+  `pdesc` varchar(100) NOT NULL,
+  `sold` varchar(255) NOT NULL,
+  `pleft` varchar(100) NOT NULL,
+  `pprice` varchar(100) NOT NULL,
+  `pcategory` varchar(100) NOT NULL,
+  `psupplier` varchar(100) NOT NULL,
+  `psellingprice` varchar(100) NOT NULL,
+  `day_name` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `day` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `productlist`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `sales`
+--
+
+CREATE TABLE `sales` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `qty` varchar(100) NOT NULL,
+  `total` varchar(100) NOT NULL,
+  `code` varchar(100) NOT NULL,
+  `date` varchar(100) NOT NULL,
+  `time` varchar(100) NOT NULL,
+  `PRICE` varchar(100) NOT NULL,
+  `pcode` varchar(100) NOT NULL,
+  `totalretail` decimal(6,2) NOT NULL,
+  `status` varchar(100) NOT NULL,
+  `day_name` varchar(50) NOT NULL,
+  `month` varchar(50) NOT NULL,
+  `day` varchar(50) NOT NULL,
+  `year` varchar(50) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+--
+-- Dumping data for table `sales`
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `socode`
+--
+
+CREATE TABLE `socode` (
+  `id` int(11) NOT NULL auto_increment,
+  `code` int(11) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `socode`
+--
+
+INSERT INTO `socode` (`id`, `code`) VALUES
+(1, 168);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `stockin`
+--
+
+CREATE TABLE `stockin` (
+  `id` int(11) NOT NULL auto_increment,
+  `name` varchar(100) NOT NULL,
+  `CODE` varchar(100) NOT NULL,
+  `qty` int(11) NOT NULL,
+  `total` int(11) NOT NULL,
+  `datepurchase` varchar(100) NOT NULL,
+  `transactioncode` varchar(100) NOT NULL,
+  `PRICE` int(11) NOT NULL,
+  `supplier` varchar(100) NOT NULL,
+  PRIMARY KEY  (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Dumping data for table `stockin`
+--
+
+INSERT INTO `stockin` (`id`, `name`, `CODE`, `qty`, `total`, `datepurchase`, `transactioncode`, `PRICE`, `supplier`) VALUES
+(3, '<br /><b>Notice</b>:  Undefined variable: name in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>20', '<br />\r\n<b>Notice</b>:  Undefined variable: CODE in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>', 0, 0, '03/21/2012 8 : 16 : 37', '2012-03-0002-STI', 0, 'Select Supplier'),
+(4, '<br /><b>Notice</b>:  Undefined variable: name in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>20', '<br />\r\n<b>Notice</b>:  Undefined variable: CODE in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>', 0, 0, '03/21/2012 8 : 17 : 16', '2012-03-0003-STI', 0, 'Select Supplier'),
+(5, '<br /><b>Notice</b>:  Undefined variable: name in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>20', '<br />\r\n<b>Notice</b>:  Undefined variable: CODE in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>', 0, 0, '03/21/2012 8 : 23 : 11', '2012-03-0004-STI', 0, 'Select Supplier'),
+(6, '<br /><b>Notice</b>:  Undefined variable: name in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>20', '<br />\r\n<b>Notice</b>:  Undefined variable: CODE in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>', 0, 0, '03/21/2012 10 : 13 : 21', '2012-03-0007-STI', 0, ''),
+(7, '', '12345', 12, 14808, '03/21/2012 12 : 41 : 57', '2012-03-0008-STI', 1234, ''),
+(8, '', '<br />\r\n<b>Notice</b>:  Undefined variable: CODE in <b>C:wampwwwOnlinePOSstockin.php</b> on line <b>', 0, 0, '03/21/2012 12 : 43 : 16', '2012-03-0009-STI', 0, ''),
+(9, '', '12', 13, 390, '03/21/2012 12 : 46 : 47', '2012-03-00010-STI', 30, 'Select Supplier'),
+(10, '', '00', 10, 400, '03/21/2012 12 : 50 : 22', '2012-03-00011-STI', 40, 'Select Supplier'),
+(11, '', '00', 10, 40, '03/21/2012 12 : 55 : 43', '2012-03-00012-STI', 40, ''),
+(12, '', '00', 0, 0, '03/21/2012 13 : 19 : 00', '2012-03-00013-STI', 40, ''),
+(13, '', '33', 10, 200, '03/21/2012 13 : 20 : 18', '2012-03-00014-STI', 20, 'ian'),
+(14, '', '12345', 34, 41956, '03/21/2012 20 : 34 : 53', '2012-03-00016-STI', 1234, 'Select Supplier'),
+(15, '', '12345', 12, 14808, '03/21/2012 20 : 35 : 37', '2012-03-00017-STI', 1234, 'Select Supplier'),
+(16, '', '12', 12, 144, '03/22/2012 16 : 58 : 05', '2012-03-00024-STI', 12, 'Select Supplier');
